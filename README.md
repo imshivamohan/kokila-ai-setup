@@ -37,6 +37,8 @@ docker run -it --gpus all \
   -v $(pwd):/workspace \
   -v hf_cache:/home/kokila/.cache/huggingface \
   siva9989/kokila:latest
+
+docker exec -it f0fdcfe7edd1 bash
 ```
 
 ---
