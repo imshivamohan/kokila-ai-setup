@@ -1,0 +1,29 @@
+services:
+  kokila:
+    build: .
+    container_name: ooha-digitals
+    runtime: nvidia
+
+    environment:
+      - NVIDIA_VISIBLE_DEVICES=all
+      - TZ=Asia/Kolkata
+      - HF_HOME=/home/kokila/.cache/huggingface
+
+    volumes:
+      - ../:/workspace
+
+      # 🔥 HuggingFace model cache (PERSISTENT)
+      - hf_cache:/home/kokila/.cache/huggingface
+
+      # ⚡ pip cache (faster rebuilds)
+      - pip_cache:/home/kokila/.cache/pip
+
+    ports:
+      - "8000:8000"
+
+    stdin_open: true
+    tty: true
+
+volumes:
+  hf_cache:
+  pip_cache:
