@@ -24,7 +24,7 @@ A production-ready Docker container for high-performance AI audio workloads, opt
 ## 📦 Docker Image
 
 ```bash
-docker pull YOUR_USERNAME/kokila:latest
+docker pull siva9989/kokila:latest
 ```
 
 ---
@@ -36,7 +36,7 @@ docker run -it --gpus all \
   -p 8000:8000 \
   -v $(pwd):/workspace \
   -v hf_cache:/home/kokila/.cache/huggingface \
-  YOUR_USERNAME/kokila:latest
+  siva9989/kokila:latest
 ```
 
 ---
